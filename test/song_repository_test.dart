@@ -9,8 +9,8 @@ void main() {
   // Test both the success and the failure of the post request
 
   // - Using then() with .catchError().
-  test("Success Using then() with .catchError()", (){
-    repositoryMock.fetchSongById("s2")
+  test("Success Using then() with .catchError()", () {
+    return repositoryMock.fetchSongById("s2")
     .then((value) {
       print("Song received: ${value!.title}");
     })
@@ -19,8 +19,8 @@ void main() {
     });
   });
 
-  test("Fail Using then() with .catchError()", (){
-    repositoryMock.fetchSongById("s9")
+  test("Fail Using then() with .catchError()", () {
+    return repositoryMock.fetchSongById("s9")
     .then((value) {
       print("Song received: ${value!.title}");
     })
@@ -49,5 +49,8 @@ void main() {
     }
   });
 }
+
+
+
 
 

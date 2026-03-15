@@ -56,7 +56,7 @@ class SongRepositoryMock implements SongRepository {
 
     // - If not found : Throw an error with the message “no song found for id 25 in the database"
 
-    return Future.delayed(Duration(milliseconds: 0), (){
+    return Future.delayed(Duration(seconds: 3), (){
       try {
         return _songs.firstWhere((song) => song.id == id);
       } catch (_) {
